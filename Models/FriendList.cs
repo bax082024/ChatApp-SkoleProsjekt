@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatApp_SkoleProsjekt.Models
 {
-    internal class Friend
+    internal class FriendList
     {
     }
 }
