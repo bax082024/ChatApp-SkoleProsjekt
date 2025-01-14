@@ -12,9 +12,12 @@ namespace ChatApp_SkoleProsjekt.UI
 {
     public partial class ResetPasswordForm : Form
     {
-        public ResetPasswordForm()
+        private string _username;
+
+        public ResetPasswordForm(string username)
         {
             InitializeComponent();
+            _username = username;
         }
     }
 }

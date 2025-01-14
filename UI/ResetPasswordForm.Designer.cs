@@ -42,16 +42,17 @@
             // 
             bttnSubmit.BackColor = Color.LightBlue;
             bttnSubmit.FlatStyle = FlatStyle.Popup;
-            bttnSubmit.Location = new Point(40, 129);
+            bttnSubmit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnSubmit.Location = new Point(57, 130);
             bttnSubmit.Name = "bttnSubmit";
-            bttnSubmit.Size = new Size(93, 33);
+            bttnSubmit.Size = new Size(69, 26);
             bttnSubmit.TabIndex = 0;
-            bttnSubmit.Text = "button1";
+            bttnSubmit.Text = "Submit";
             bttnSubmit.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(103, 92);
+            textBox1.Location = new Point(112, 93);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Username";
             textBox1.Size = new Size(139, 23);
@@ -100,11 +101,12 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.DarkSlateGray;
             panel1.Controls.Add(lblQuestion);
             panel1.Controls.Add(lblSecretQuestion);
             panel1.Controls.Add(txtSecretAnswer);
             panel1.Controls.Add(bttnSubmit);
-            panel1.Location = new Point(71, 131);
+            panel1.Location = new Point(83, 139);
             panel1.Name = "panel1";
             panel1.Size = new Size(195, 187);
             panel1.TabIndex = 6;
@@ -113,8 +115,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MidnightBlue;
-            ClientSize = new Size(367, 450);
+            BackColor = Color.SlateGray;
+            ClientSize = new Size(367, 408);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(textBox1);
