@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {}
+    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-Skoleprosjekt\\ChatApp-SkoleProsjekt.csproj": {}
   },
   "projects": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {
+    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-Skoleprosjekt\\ChatApp-SkoleProsjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
+        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-Skoleprosjekt\\ChatApp-SkoleProsjekt.csproj",
         "projectName": "ChatApp-SkoleProsjekt",
-        "projectPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
+        "projectPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-Skoleprosjekt\\ChatApp-SkoleProsjekt.csproj",
         "packagesPath": "C:\\Users\\busch\\.nuget\\packages\\",
-        "outputPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\obj\\",
+        "outputPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-Skoleprosjekt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,16 +50,6 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            },
-            "System.Security.Cryptography.Cng": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
