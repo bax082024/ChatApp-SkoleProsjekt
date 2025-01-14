@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBox1
@@ -38,11 +39,21 @@
             textBox1.Size = new Size(127, 23);
             textBox1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(128, 57);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
             // ResetPasswordForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(356, 396);
+            Controls.Add(label1);
             Controls.Add(textBox1);
             Name = "ResetPasswordForm";
             Text = "ResetPasswordForm";
@@ -53,5 +64,6 @@
         #endregion
 
         private TextBox textBox1;
+        private Label label1;
     }
 }
