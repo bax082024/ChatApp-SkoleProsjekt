@@ -1,32 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {}
+    "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {}
   },
   "projects": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {
+    "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
+        "projectUniqueName": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
         "projectName": "ChatApp-SkoleProsjekt",
-        "projectPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
-        "packagesPath": "C:\\Users\\busch\\.nuget\\packages\\",
-        "outputPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\ChatApp-SkoleProsjekt\\obj\\",
+        "projectPath": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
+        "packagesPath": "C:\\Users\\hee08\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\busch\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hee08\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0-windows"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,22 +37,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            },
-            "System.Security.Cryptography.Cng": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -79,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
