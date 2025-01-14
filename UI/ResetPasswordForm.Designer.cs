@@ -28,31 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            bttnSubmit = new Button();
+            bttnReset = new Button();
             textBox1 = new TextBox();
             txtSecretAnswer = new TextBox();
             label1 = new Label();
-            lblQuestion = new Label();
             lblSecretQuestion = new Label();
             panel1 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // bttnSubmit
+            // bttnReset
             // 
-            bttnSubmit.BackColor = Color.LightBlue;
-            bttnSubmit.FlatStyle = FlatStyle.Popup;
-            bttnSubmit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bttnSubmit.Location = new Point(57, 130);
-            bttnSubmit.Name = "bttnSubmit";
-            bttnSubmit.Size = new Size(69, 26);
-            bttnSubmit.TabIndex = 0;
-            bttnSubmit.Text = "Submit";
-            bttnSubmit.UseVisualStyleBackColor = false;
+            bttnReset.BackColor = Color.LightBlue;
+            bttnReset.FlatStyle = FlatStyle.Popup;
+            bttnReset.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            bttnReset.Location = new Point(61, 122);
+            bttnReset.Name = "bttnReset";
+            bttnReset.Size = new Size(69, 26);
+            bttnReset.TabIndex = 0;
+            bttnReset.Text = "Reset";
+            bttnReset.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(112, 93);
+            textBox1.Location = new Point(29, 35);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Username";
             textBox1.Size = new Size(139, 23);
@@ -60,7 +59,7 @@
             // 
             // txtSecretAnswer
             // 
-            txtSecretAnswer.Location = new Point(29, 90);
+            txtSecretAnswer.Location = new Point(29, 79);
             txtSecretAnswer.Name = "txtSecretAnswer";
             txtSecretAnswer.PlaceholderText = "Secret Answer";
             txtSecretAnswer.Size = new Size(139, 23);
@@ -71,29 +70,18 @@
             label1.AutoSize = true;
             label1.Font = new Font("Stencil", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Gold;
-            label1.Location = new Point(53, 21);
+            label1.Location = new Point(42, 21);
             label1.Name = "label1";
             label1.Size = new Size(257, 32);
             label1.TabIndex = 3;
             label1.Text = "Reset Password";
-            // 
-            // lblQuestion
-            // 
-            lblQuestion.AutoSize = true;
-            lblQuestion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblQuestion.ForeColor = Color.DarkOrange;
-            lblQuestion.Location = new Point(40, 41);
-            lblQuestion.Name = "lblQuestion";
-            lblQuestion.Size = new Size(113, 17);
-            lblQuestion.TabIndex = 4;
-            lblQuestion.Text = "Secret Question :";
             // 
             // lblSecretQuestion
             // 
             lblSecretQuestion.AutoSize = true;
             lblSecretQuestion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSecretQuestion.ForeColor = Color.DarkOrange;
-            lblSecretQuestion.Location = new Point(40, 70);
+            lblSecretQuestion.Location = new Point(29, 15);
             lblSecretQuestion.Name = "lblSecretQuestion";
             lblSecretQuestion.Size = new Size(16, 17);
             lblSecretQuestion.TabIndex = 5;
@@ -102,13 +90,13 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkSlateGray;
-            panel1.Controls.Add(lblQuestion);
             panel1.Controls.Add(lblSecretQuestion);
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(txtSecretAnswer);
-            panel1.Controls.Add(bttnSubmit);
-            panel1.Location = new Point(83, 139);
+            panel1.Controls.Add(bttnReset);
+            panel1.Location = new Point(73, 56);
             panel1.Name = "panel1";
-            panel1.Size = new Size(195, 187);
+            panel1.Size = new Size(195, 213);
             panel1.TabIndex = 6;
             // 
             // ResetPasswordForm
@@ -116,10 +104,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(367, 408);
+            ClientSize = new Size(340, 322);
             Controls.Add(panel1);
             Controls.Add(label1);
-            Controls.Add(textBox1);
             Name = "ResetPasswordForm";
             Text = "ResetPasswordForm";
             panel1.ResumeLayout(false);
@@ -130,11 +117,10 @@
 
         #endregion
 
-        private Button bttnSubmit;
+        private Button bttnReset;
         private TextBox textBox1;
         private TextBox txtSecretAnswer;
         private Label label1;
-        private Label lblQuestion;
         private Label lblSecretQuestion;
         private Panel panel1;
     }
