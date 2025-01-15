@@ -26,7 +26,7 @@ namespace ChatApp_SkoleProsjekt.Services
 
         public void SaveUsers(List<User> user)
         {
-            string json = JsonConvert.SerializeObject(user, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(user, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(UserFilePath, json);
         }
 
