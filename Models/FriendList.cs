@@ -11,8 +11,10 @@ namespace ChatApp_SkoleProsjekt.Models
         List<string> friendList = new List<string>();
         public void AddFriend()
         {
-            // Search for user with ID
-            // Add user to friendList
+            // if (UserList.json.IDnumber.exists) ;
+            // {
+            //     User.add(friendList);
+            // }
         }
 
         public void DisplayFriends()
