@@ -17,4 +17,6 @@ namespace ChatApp_SkoleProsjekt.UI
             InitializeComponent();
         }
     }
+
+    // jklsdhtlksdt
 }
