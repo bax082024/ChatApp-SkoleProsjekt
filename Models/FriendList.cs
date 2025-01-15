@@ -13,7 +13,7 @@ namespace ChatApp_SkoleProsjekt.Models
         {
             // if (UserList.json.ID.exists) ;
             // {
-            //     User.add(friendList);
+            //     Friend.add(friendList);
             // }
             // else
             // {
