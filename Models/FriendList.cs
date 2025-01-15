@@ -8,5 +8,11 @@ namespace ChatApp_SkoleProsjekt.Models
 {
     internal class FriendList
     {
+        List<string> friendList = new List<string>();
+        public void AddFriend()
+        {
+            // Search for user with ID
+            // Add user to List<Users>
+        }
     }
 }
