@@ -12,13 +12,13 @@ namespace ChatApp_SkoleProsjekt.Models
         public void AddFriend()
         {
             // Search for user with ID
-            // Add user to List<Users>
+            // Add user to friendList
         }
 
         public void DisplayFriends()
         {
             // Get List<Users>
-            // Output list of friends
+            // Output friendList
         }
     }
 }
