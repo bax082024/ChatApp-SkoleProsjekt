@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            lblStatus = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
+            btnRecover = new Button();
+            btnNext = new Button();
+            lblSecretQuestion = new Label();
+            label2 = new Label();
+            lblStatus = new Label();
+            txtSecretAnswer = new TextBox();
+            txtUsername = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,40 +44,55 @@
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(btnRecover);
+            panel1.Controls.Add(btnNext);
+            panel1.Controls.Add(lblSecretQuestion);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(lblStatus);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtSecretAnswer);
+            panel1.Controls.Add(txtUsername);
             panel1.Location = new Point(50, 55);
             panel1.Name = "panel1";
             panel1.Size = new Size(358, 303);
             panel1.TabIndex = 0;
             // 
-            // textBox1
+            // button3
             // 
-            textBox1.Location = new Point(101, 64);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(141, 23);
-            textBox1.TabIndex = 0;
+            button3.Location = new Point(148, 225);
+            button3.Name = "button3";
+            button3.Size = new Size(62, 25);
+            button3.TabIndex = 7;
+            button3.Text = "cancel";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnRecover
             // 
-            textBox2.Location = new Point(101, 154);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(141, 23);
-            textBox2.TabIndex = 1;
+            btnRecover.Location = new Point(148, 194);
+            btnRecover.Name = "btnRecover";
+            btnRecover.Size = new Size(62, 25);
+            btnRecover.TabIndex = 6;
+            btnRecover.Text = "recover";
+            btnRecover.UseVisualStyleBackColor = true;
+            btnRecover.Click += button2_Click;
             // 
-            // lblStatus
+            // btnNext
             // 
-            lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(122, 18);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(13, 15);
-            lblStatus.TabIndex = 2;
-            lblStatus.Text = "''";
+            btnNext.Location = new Point(132, 93);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(62, 25);
+            btnNext.TabIndex = 5;
+            btnNext.Text = "next";
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
+            // 
+            // lblSecretQuestion
+            // 
+            lblSecretQuestion.AutoSize = true;
+            lblSecretQuestion.Location = new Point(101, 136);
+            lblSecretQuestion.Name = "lblSecretQuestion";
+            lblSecretQuestion.Size = new Size(90, 15);
+            lblSecretQuestion.TabIndex = 4;
+            lblSecretQuestion.Text = "Secret Question";
             // 
             // label2
             // 
@@ -88,41 +103,28 @@
             label2.TabIndex = 3;
             label2.Text = "Username";
             // 
-            // label3
+            // lblStatus
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(101, 136);
-            label3.Name = "label3";
-            label3.Size = new Size(90, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Secret Question";
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(122, 18);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(13, 15);
+            lblStatus.TabIndex = 2;
+            lblStatus.Text = "''";
             // 
-            // button1
+            // txtSecretAnswer
             // 
-            button1.Location = new Point(132, 93);
-            button1.Name = "button1";
-            button1.Size = new Size(62, 25);
-            button1.TabIndex = 5;
-            button1.Text = "next";
-            button1.UseVisualStyleBackColor = true;
+            txtSecretAnswer.Location = new Point(101, 154);
+            txtSecretAnswer.Name = "txtSecretAnswer";
+            txtSecretAnswer.Size = new Size(141, 23);
+            txtSecretAnswer.TabIndex = 1;
             // 
-            // button2
+            // txtUsername
             // 
-            button2.Location = new Point(148, 194);
-            button2.Name = "button2";
-            button2.Size = new Size(62, 25);
-            button2.TabIndex = 6;
-            button2.Text = "recover";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(148, 225);
-            button3.Name = "button3";
-            button3.Size = new Size(62, 25);
-            button3.TabIndex = 7;
-            button3.Text = "cancel";
-            button3.UseVisualStyleBackColor = true;
+            txtUsername.Location = new Point(101, 64);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(141, 23);
+            txtUsername.TabIndex = 0;
             // 
             // PasswordRecoveryForm
             // 
@@ -141,12 +143,12 @@
 
         private Panel panel1;
         private Button button3;
-        private Button button2;
-        private Button button1;
-        private Label label3;
+        private Button btnRecover;
+        private Button btnNext;
+        private Label lblSecretQuestion;
         private Label label2;
         private Label lblStatus;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtSecretAnswer;
+        private TextBox txtUsername;
     }
 }
