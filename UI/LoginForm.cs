@@ -11,6 +11,11 @@ namespace ChatApp_SkoleProsjekt
             {
                 InitializeComponent();
 
+
+            }
+            /// <summary>
+            ///
+            /// </summary>
            
         
             class Program
