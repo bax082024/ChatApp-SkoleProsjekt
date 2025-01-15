@@ -6,7 +6,29 @@ using System.Threading.Tasks;
 
 namespace ChatApp_SkoleProsjekt.Models
 {
-    internal class FriendList
+    public class FriendList
     {
+        List<User> friendList = new List<User>();
+        public void AddFriend()
+        {
+            // if (UserList.json.ID.exists) ;
+            // {
+            //     UserList.json.Username = Friend.Username
+            //     UserList.json.ID = Friend.ID
+            //     Friend.add(friendList);
+            // }
+            // else
+            // {
+            //     Console.Writeline("User does not exist")
+            // }
+        }
+
+        public void DisplayFriends()
+        {
+            // display.friendList;
+
+            // Get List<Users>
+            // Output friendList
+        }
     }
 }
