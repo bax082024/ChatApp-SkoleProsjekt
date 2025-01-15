@@ -29,7 +29,7 @@ namespace ChatApp_SkoleProsjekt.Services
             File.WriteAllText(UserFilePath, json);
         }
 
-        public bool RegisterUsers (string  username, string password, string secretQuestion, string secretAnsware)
+        public bool RegisterUsers (string  username, string password, string secretQuestion, string secretAnswer)
         {
             if(!IsValidUsername(username) || !IsValidPassword(password)) return false;
 
@@ -38,7 +38,7 @@ namespace ChatApp_SkoleProsjekt.Services
 
             string salt = GenerateSalt();
             string passwordHash = HashPassword(password, salt);
-            string secretAnswareHash = HashPassword(secretAnsware, salt);
+            string secretAnswerHash = HashPassword(secretAnswer, salt);
 
             var newUser = new User
             {
@@ -46,7 +46,7 @@ namespace ChatApp_SkoleProsjekt.Services
                 PasswordHash = passwordHash,
                 Salt = salt,
                 SecretQuestion = secretQuestion,
-                SecretAnswerHash = secretAnswareHash
+                SecretAnswerHash = secretAnswerHash
             };
 
             users.Add(newUser);
@@ -64,14 +64,14 @@ namespace ChatApp_SkoleProsjekt.Services
             return hashedInput == user.PasswordHash;
         }
 
-        public bool ValidateSecretAnsware(string username, string answare)
+        public bool ValidateSecretAnswer(string username, string answer)
         {
             var users = LoadUsers();
             var user = users.FirstOrDefault(u =>u.Username == username);
             if (user == null) return false;
 
-            string hashedAnsware = HashPassword(answare, user.Salt);
-            return hashedAnsware == user.SecretAnswerHash;
+            string hashedAnswer = HashPassword(answer, user.Salt);
+            return hashedAnswer == user.SecretAnswerHash;
         }
 
         public string HashPassword(string input, string salt)
