@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatApp_SkoleProsjekt.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,57 @@ namespace ChatApp_SkoleProsjekt.UI
 {
     public partial class PasswordRecoveryForm : Form
     {
+        private readonly AuthenticationHelper _authService;
+        private string _currentUsername;
+
         public PasswordRecoveryForm()
         {
             InitializeComponent();
+            _authService = new AuthenticationHelper();
+            lblSecretQuestion.Visible = false;
+            txtSecretAnswer.Visible = false;
+            btnRecover.Visible = false;
+            lblStatus.Text = string.Empty;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string secretAnswer = txtSecretAnswer.Text;
+
+            if (_authService.ValidateSecretAnswer(_currentUsername, secretAnswer))
+            {
+                lblStatus.Text = "Secret answer is correct! Please reset your password.";
+                var resetForm = new ResetPasswordForm(_currentUsername);
+                resetForm.Show();
+                this.Close();
+            }
+            else
+            {
+                lblStatus.Text = "Invalid answer to the secret question.";
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+
+            var users = _authService.LoadUsers();
+            var user = users.FirstOrDefault(u => u.Username == username);
+
+            if (user == null)
+            {
+                lblStatus.Text = "Username not found.";
+                lblStatus.ForeColor = Color.Red;
+                return;
+            }
+
+            _currentUsername = username;
+            lblSecretQuestion.Text = $"Secret Question: {user.SecretQuestion}";
+            lblSecretQuestion.Visible = true;
+            txtSecretAnswer.Visible = true;
+            btnRecover.Visible = true;
+
+            lblStatus.Text = string.Empty;
         }
     }
 }
