@@ -20,6 +20,16 @@ namespace ChatApp_SkoleProsjekt.UI
         {
             InitializeComponent();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
