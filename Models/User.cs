@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChatApp_SkoleProsjekt.Models
 {
-    internal class User
+    public class User
     {
+        public string Username { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
+        public string Salt { get; set; } = string.Empty;
+        public string SecretQuestion { get; set; } = string.Empty;
+        public string SecretAnswerHash { get; set; } = string.Empty;
+        public Guid ID { get; set; } = Guid.NewGuid();
     }
 }
