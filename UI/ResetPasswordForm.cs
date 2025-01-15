@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatApp_SkoleProsjekt.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,14 @@ namespace ChatApp_SkoleProsjekt.UI
 {
     public partial class ResetPasswordForm : Form
     {
+        private readonly AuthenticationHelper _authService;
+        private string _username;
+
         public ResetPasswordForm()
         {
             InitializeComponent();
         }
     }
 
-    // jklsdhtlksdt
+
 }
