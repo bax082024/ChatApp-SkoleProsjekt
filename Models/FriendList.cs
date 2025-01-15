@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChatApp_SkoleProsjekt.Models
 {
-    internal class FriendList
+    public class FriendList
     {
-        List<string> friendList = new List<string>();
+        List<User> friendList = new List<User>();
         public void AddFriend()
         {
             // if (UserList.json.ID.exists) ;
