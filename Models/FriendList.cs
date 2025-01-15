@@ -15,6 +15,10 @@ namespace ChatApp_SkoleProsjekt.Models
             // {
             //     User.add(friendList);
             // }
+            // else
+            // {
+            //     Console.Writeline("User does not exist")
+            // }
         }
 
         public void DisplayFriends()
