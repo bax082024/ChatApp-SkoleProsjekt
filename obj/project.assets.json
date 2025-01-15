@@ -8,24 +8,32 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hee08\\.nuget\\packages\\": {}
+    "C:\\Users\\ianro\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
+      "projectUniqueName": "C:\\Users\\ianro\\Desktop\\skoleproskjet chat app\\ChatApp-SkoleProsjekt.csproj",
       "projectName": "ChatApp-SkoleProsjekt",
-      "projectPath": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\ChatApp-SkoleProsjekt.csproj",
-      "packagesPath": "C:\\Users\\hee08\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hee08\\Desktop\\Kodehode\\Backend\\C#\\1 Projects\\ChatApp-SkoleProsjekt\\obj\\",
+      "projectPath": "C:\\Users\\ianro\\Desktop\\skoleproskjet chat app\\ChatApp-SkoleProsjekt.csproj",
+      "packagesPath": "C:\\Users\\ianro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ianro\\Desktop\\skoleproskjet chat app\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\hee08\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\ianro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -43,7 +51,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -67,7 +76,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
