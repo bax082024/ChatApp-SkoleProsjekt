@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\IAN\\ChatApp-SkoleProsjekt.csproj": {}
+    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\Mariann\\ChatApp-SkoleProsjekt.csproj": {}
   },
   "projects": {
-    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\IAN\\ChatApp-SkoleProsjekt.csproj": {
+    "C:\\HjemmeKode\\C-Sharp\\MyProjects\\Mariann\\ChatApp-SkoleProsjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\IAN\\ChatApp-SkoleProsjekt.csproj",
+        "projectUniqueName": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\Mariann\\ChatApp-SkoleProsjekt.csproj",
         "projectName": "ChatApp-SkoleProsjekt",
-        "projectPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\IAN\\ChatApp-SkoleProsjekt.csproj",
+        "projectPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\Mariann\\ChatApp-SkoleProsjekt.csproj",
         "packagesPath": "C:\\Users\\busch\\.nuget\\packages\\",
-        "outputPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\IAN\\obj\\",
+        "outputPath": "C:\\HjemmeKode\\C-Sharp\\MyProjects\\Mariann\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
