@@ -10,8 +10,8 @@ namespace ChatApp_SkoleProsjekt.Models
 {
     public class FriendList
     {
-        List<User> UserList { get; set; }
-        List<Friend> friendList = new List<Friend>();
+        List<User>? UserList = new();
+        List<Friend> friendList = new();
         public void AddFriend(Friend friend)
         {
             string path = "UserList.json";
@@ -19,7 +19,7 @@ namespace ChatApp_SkoleProsjekt.Models
             {
                 string jsonContent = File.ReadAllText(path);
                 UserList = JsonSerializer.Deserialize<List<User>>(jsonContent);
-                User user = UserList.FirstOrDefault(u => u.ID == friend.ID);
+                User? user = UserList.FirstOrDefault(u => u.ID == friend.ID);
                 if (user != null)
                 {
                     user.Username = friend.Username;
@@ -27,7 +27,8 @@ namespace ChatApp_SkoleProsjekt.Models
                     friendList.Add(friend);
                 }
                 string updatedJson = JsonSerializer.Serialize(friendList, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(path, updatedJson);
+                string pathNew = "FriendList.json";
+                File.WriteAllText(pathNew, updatedJson);
             }
             else
             {
