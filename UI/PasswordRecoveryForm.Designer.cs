@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.DimGray;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(btnRecover);
@@ -88,18 +89,20 @@
             // lblSecretQuestion
             // 
             lblSecretQuestion.AutoSize = true;
+            lblSecretQuestion.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblSecretQuestion.Location = new Point(101, 136);
             lblSecretQuestion.Name = "lblSecretQuestion";
-            lblSecretQuestion.Size = new Size(90, 15);
+            lblSecretQuestion.Size = new Size(97, 15);
             lblSecretQuestion.TabIndex = 4;
             lblSecretQuestion.Text = "Secret Question";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(132, 46);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 3;
             label2.Text = "Username";
             // 
@@ -130,6 +133,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(459, 407);
             Controls.Add(panel1);
             Name = "PasswordRecoveryForm";
