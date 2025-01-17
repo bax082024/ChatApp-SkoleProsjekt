@@ -37,6 +37,7 @@
             lblStatus = new Label();
             txtSecretAnswer = new TextBox();
             txtUsername = new TextBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -129,18 +130,30 @@
             txtUsername.Size = new Size(141, 23);
             txtUsername.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(95, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(265, 37);
+            label1.TabIndex = 4;
+            label1.Text = "Password Recovery";
+            // 
             // PasswordRecoveryForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(459, 407);
+            Controls.Add(label1);
             Controls.Add(panel1);
             Name = "PasswordRecoveryForm";
             Text = "PasswordRecoveryForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -154,5 +167,6 @@
         private Label lblStatus;
         private TextBox txtSecretAnswer;
         private TextBox txtUsername;
+        private Label label1;
     }
 }
