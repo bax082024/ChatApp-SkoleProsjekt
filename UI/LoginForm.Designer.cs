@@ -105,6 +105,7 @@
             // 
             // txtPassword
             // 
+            txtPassword.BackColor = SystemColors.Info;
             txtPassword.Location = new Point(93, 103);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Password";
@@ -113,6 +114,7 @@
             // 
             // txtUsername
             // 
+            txtUsername.BackColor = SystemColors.Info;
             txtUsername.Location = new Point(92, 74);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Username";
@@ -168,6 +170,7 @@
             Controls.Add(statusStrip1);
             Controls.Add(panel1);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

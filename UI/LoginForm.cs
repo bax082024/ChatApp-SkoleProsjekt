@@ -1,5 +1,6 @@
 using ChatApp_SkoleProsjekt.Services;
 using ChatApp_SkoleProsjekt.UI;
+using System.Drawing.Drawing2D;
 
 namespace ChatApp_SkoleProsjekt
 {
@@ -51,6 +52,18 @@ namespace ChatApp_SkoleProsjekt
         {
             var registerForm = new RegisterForm();
             registerForm.Show();
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.Purple,  // Top color
+                Color.DarkBlue,        // Bottom color
+                LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
         }
     }
 }

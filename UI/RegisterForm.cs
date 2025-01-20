@@ -1,5 +1,6 @@
 ﻿using ChatApp_SkoleProsjekt.Services;
 using System;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 
@@ -44,6 +45,18 @@ namespace ChatApp_SkoleProsjekt.UI
                 MessageBox.Show("Registration failed. Username might already exist or requirements not met.");
             }
 
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.Purple,  // Top color
+                Color.DarkBlue,        // Bottom color
+                LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
         }
 
 
