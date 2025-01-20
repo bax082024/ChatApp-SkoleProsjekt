@@ -7,6 +7,7 @@
 
     namespace RegistrationForm
     {
+        // XFGDRYDR
         public partial class RegistrationForm : RegisterForm
         {
 
