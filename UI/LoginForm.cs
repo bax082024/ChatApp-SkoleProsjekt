@@ -36,9 +36,6 @@ namespace ChatApp_SkoleProsjekt
 
         }
 
-
-
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -46,14 +43,14 @@ namespace ChatApp_SkoleProsjekt
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var registerForm = new RegisterForm();
-            registerForm.Show();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
             var recoveryForm = new PasswordRecoveryForm();
             recoveryForm.Show();
+        }     
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            var registerForm = new RegisterForm();
+            registerForm.Show();
         }
     }
 }
