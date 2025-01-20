@@ -4,10 +4,20 @@ namespace ChatApp_SkoleProsjekt.Models
 {
     public class DisplayFriend
     {
-        public void DisplayFriends()
+        List<Friend> friendList;
+        public void DisplayFriends(Friend friend)
         {
-            
-            // Get List<Users>
+            {
+                string path = "FriendList.json";
+                if (File.Exists(path))
+                {
+                    string jsonContent = File.ReadAllText(path);
+                    friendList = JsonSerializer.Deserialize<List<friend>>(jsonContent);
+                    if (friendList != null)
+                    {
+                    }
+
+                    // Get List<Users>
             // Output friendList
         }
     }
