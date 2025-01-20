@@ -24,7 +24,7 @@ namespace ChatApp_SkoleProsjekt
                 var currentUser = _authService.GetUserByUsername(username); // Fetch the current user object
                 if (currentUser != null)
                 {
-                    var chatForm = new ChatForm(currentUser); // Pass the User object
+                    var chatForm = new ChatForm(); // Pass the User object
                     this.Hide();
                     chatForm.Show();
                 }

@@ -106,5 +106,11 @@ namespace ChatApp_SkoleProsjekt.Services
                 Regex.IsMatch(password, @"\d") &&
                 Regex.IsMatch(password, @"[!@#$%^&*(),.?""{}|<>]");
         }
+
+        public User GetUserByUsername(string username)
+        {
+            var users = LoadUsers();
+            return users.FirstOrDefault(u => u.Username == username);
+        }
     }
 }
