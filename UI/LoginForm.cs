@@ -1,63 +1,59 @@
+using ChatApp_SkoleProsjekt.Services;
+using ChatApp_SkoleProsjekt.UI;
+
 namespace ChatApp_SkoleProsjekt
 {
-    public partial class LoginForm : Form;
-    namespace LoginApp
+    public partial class LoginForm : Form
     {
-        public partial class Form1 : Form
+
+        private readonly AuthenticationHelper _authService;
+
+        public LoginForm()
         {
-            private string connectionString = "your_connection_string_here";
+            InitializeComponent();
+            _authService = new AuthenticationHelper();
+        }
 
-            public Form1()
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (_authService.AuthenticateUser(username, password))
             {
-                InitializeComponent();
-
-
-            }
-            /// <summary>
-            ///
-            /// </summary>
-
-
-            class Program
-            {
-                // Hashed and salted username and password should consist of numbers and letters
-                static string storedUsername = "user123";
-                static string storedPassword = "password123";
-
-                static void Main(string[] args)
+                var currentUser = _authService.GetUserByUsername(username); // Fetch the current user object
+                if (currentUser != null)
                 {
-                    // Ask user for login information
-                    Console.Write("Enter username: ");
-                    string username = Console.ReadLine();
-                    Console.Write("Enter password: ");
-                    string password = Console.ReadLine();
-                    // Call the login function
-
-                    if (CheckLoginDetails(username, password))
-                    {
-                        Console.WriteLine("Login was successful!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Login failed! Incorrect username and or password.");
-                    }
+                    var chatForm = new ChatForm(currentUser); // Pass the User object
+                    this.Hide();
+                    chatForm.Show();
                 }
-
-                // Function to check login details
-                static bool CheckLoginDetails(string username, string password)
+                else
                 {
-                    // Check if the entered hashed username and password match the stored ones
-
-                    if (username == storedUsername && password == storedPassword)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    MessageBox.Show("User not found.");
                 }
-
             }
+
+        }
+
+
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoveryForm = new PasswordRecoveryForm();
+            recoveryForm.Show();
         }
     }
+}
