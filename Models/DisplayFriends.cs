@@ -6,7 +6,7 @@ namespace ChatApp_SkoleProsjekt.Models
     {
         List<Friend> friendList;
 
-        public void DisplayFriends(Friend friend)
+        public void DisplayFriends()
         {
             {
                 string path = "FriendList.json";
