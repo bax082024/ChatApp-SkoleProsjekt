@@ -75,13 +75,14 @@
             // button1
             // 
             button1.BackColor = Color.LightBlue;
+            button1.BackgroundImage = Properties.Resources.Screenshot_2025_01_20_203648;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(9, 7);
             button1.Name = "button1";
-            button1.Size = new Size(85, 27);
+            button1.Size = new Size(63, 74);
             button1.TabIndex = 7;
-            button1.Text = "FyFy";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
