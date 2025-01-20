@@ -32,5 +32,10 @@ namespace ChatApp_SkoleProsjekt.Models
                 }
             }
         }
+
+        public void RemoveFriend(Friend friend)
+        {
+            
+        }
     }
 }
