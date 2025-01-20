@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            button1 = new Button();
             linkLabel1 = new LinkLabel();
             btnRegister = new Button();
             label1 = new Label();
@@ -58,6 +59,7 @@
             // 
             panel2.BackColor = Color.DarkGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(linkLabel1);
             panel2.Controls.Add(btnRegister);
             panel2.Controls.Add(label1);
@@ -69,6 +71,19 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(320, 304);
             panel2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightBlue;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(9, 7);
+            button1.Name = "button1";
+            button1.Size = new Size(85, 27);
+            button1.TabIndex = 7;
+            button1.Text = "FyFy";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // linkLabel1
             // 
@@ -194,5 +209,6 @@
         private Label label1;
         private Button btnRegister;
         private LinkLabel linkLabel1;
+        private Button button1;
     }
 }

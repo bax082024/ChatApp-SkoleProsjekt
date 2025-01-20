@@ -2,10 +2,15 @@ using ChatApp_SkoleProsjekt.Services;
 using ChatApp_SkoleProsjekt.UI;
 using System.Drawing.Drawing2D;
 
+using NAudio.Wave; // lyd
+
 namespace ChatApp_SkoleProsjekt
 {
     public partial class LoginForm : Form
     {
+        // Lyd
+        private WaveOutEvent waveOut;
+        private AudioFileReader audioFileReader;
 
         private readonly AuthenticationHelper _authService;
 
@@ -46,7 +51,7 @@ namespace ChatApp_SkoleProsjekt
         {
             var recoveryForm = new PasswordRecoveryForm();
             recoveryForm.Show();
-        }     
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -63,6 +68,29 @@ namespace ChatApp_SkoleProsjekt
                 LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string soundFilePath = @"Sounds\Bax.m4a"; // Relative path to the sound file
+
+                // Dispose any previous playback instance
+                waveOut?.Stop();
+                waveOut?.Dispose();
+                audioFileReader?.Dispose();
+
+                // Initialize audio file reader and output
+                audioFileReader = new AudioFileReader(soundFilePath);
+                waveOut = new WaveOutEvent();
+                waveOut.Init(audioFileReader);
+                waveOut.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing sound: {ex.Message}");
             }
         }
     }
