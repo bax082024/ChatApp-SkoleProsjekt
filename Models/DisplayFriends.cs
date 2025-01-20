@@ -5,6 +5,7 @@ namespace ChatApp_SkoleProsjekt.Models
     public class DisplayFriend
     {
         List<Friend> friendList;
+
         public void DisplayFriends(Friend friend)
         {
             {
@@ -12,13 +13,19 @@ namespace ChatApp_SkoleProsjekt.Models
                 if (File.Exists(path))
                 {
                     string jsonContent = File.ReadAllText(path);
-                    friendList = JsonSerializer.Deserialize<List<friend>>(jsonContent);
+                    friendList = JsonSerializer.Deserialize<List<Friend>>(jsonContent);
                     if (friendList != null)
                     {
+                        foreach (Friend f in friendList)
+                        {
+                            Console.WriteLine(f);
+                        }
                     }
 
                     // Get List<Users>
-            // Output friendList
+                    // Output friendList
+                }
+            }
         }
     }
 }
