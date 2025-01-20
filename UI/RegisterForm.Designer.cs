@@ -91,6 +91,7 @@
             btnCancel.TabIndex = 3;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnRegister
             // 
@@ -103,6 +104,7 @@
             btnRegister.TabIndex = 2;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // tableLayoutPanel1
             // 
