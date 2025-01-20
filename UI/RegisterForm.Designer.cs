@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "RegisterForm";
+            RegisterButton = new Button();
+            SuspendLayout();
+            // 
+            // RegisterButton
+            // 
+            RegisterButton.Location = new Point(413, 119);
+            RegisterButton.Name = "RegisterButton";
+            RegisterButton.Size = new Size(94, 29);
+            RegisterButton.TabIndex = 0;
+            RegisterButton.Text = "button1";
+            RegisterButton.UseVisualStyleBackColor = true;
+            // 
+            // RegisterForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(RegisterButton);
+            Name = "RegisterForm";
+            Text = "RegisterForm";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button RegisterButton;
     }
 }
