@@ -32,10 +32,13 @@
             panel2 = new Panel();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            button1 = new Button();
-            button2 = new Button();
+            btnLogin = new Button();
+            btnExit = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            label1 = new Label();
+            btnRegister = new Button();
+            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             statusStrip1.SuspendLayout();
@@ -55,10 +58,13 @@
             // 
             panel2.BackColor = Color.DarkGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(linkLabel1);
+            panel2.Controls.Add(btnRegister);
+            panel2.Controls.Add(label1);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnExit);
+            panel2.Controls.Add(btnLogin);
             panel2.Location = new Point(6, 6);
             panel2.Name = "panel2";
             panel2.Size = new Size(320, 304);
@@ -80,23 +86,29 @@
             toolStripStatusLabel1.Size = new Size(57, 17);
             toolStripStatusLabel1.Text = "Chat App";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(113, 143);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 27);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.BackColor = Color.LightBlue;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(113, 143);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(85, 27);
+            btnLogin.TabIndex = 0;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnExit
             // 
-            button2.Location = new Point(113, 185);
-            button2.Name = "button2";
-            button2.Size = new Size(85, 27);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnExit.BackColor = Color.LightBlue;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.Location = new Point(113, 209);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(85, 27);
+            btnExit.TabIndex = 1;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -113,6 +125,38 @@
             textBox2.PlaceholderText = "Password";
             textBox2.Size = new Size(126, 23);
             textBox2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(100, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 25);
+            label1.TabIndex = 4;
+            label1.Text = "User Login";
+            // 
+            // btnRegister
+            // 
+            btnRegister.BackColor = Color.LightBlue;
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.Location = new Point(113, 176);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(85, 27);
+            btnRegister.TabIndex = 5;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(106, 278);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(102, 15);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Recover Password";
             // 
             // LoginForm
             // 
@@ -141,7 +185,10 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button button2;
-        private Button button1;
+        private Button btnExit;
+        private Button btnLogin;
+        private Label label1;
+        private Button btnRegister;
+        private LinkLabel linkLabel1;
     }
 }
