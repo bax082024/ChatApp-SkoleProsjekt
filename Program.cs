@@ -1,3 +1,5 @@
+using ChatApp_SkoleProsjekt.UI;
+
 namespace ChatApp_SkoleProsjekt
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace ChatApp_SkoleProsjekt
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+            Application.Run(new ChatForm());
         }
     }
 }
