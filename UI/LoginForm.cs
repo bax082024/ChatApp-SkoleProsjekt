@@ -21,10 +21,10 @@ namespace ChatApp_SkoleProsjekt
 
             if (_authService.AuthenticateUser(username, password))
             {
-                var currentUser = _authService.GetUserByUsername(username); // Fetch the current user object
+                var currentUser = _authService.GetUserByUsername(username);
                 if (currentUser != null)
                 {
-                    var chatForm = new ChatForm(); // Pass the User object
+                    var chatForm = new ChatForm();
                     this.Hide();
                     chatForm.Show();
                 }

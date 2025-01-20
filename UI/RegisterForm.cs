@@ -1,93 +1,51 @@
-﻿namespace ChatApp_SkoleProsjekt.UI
+﻿using ChatApp_SkoleProsjekt.Services;
+using System;
+using System.Windows.Forms;
+
+
+namespace ChatApp_SkoleProsjekt.UI
 {
-    public partial class RegisterForm : Form;
-    
-    using System;
-    using System.Windows.Form;
-
-    namespace RegistrationForm
+    public partial class RegisterForm : Form
     {
-        public partial class RegistrationForm : RegisterForm
-        {
+        private readonly AuthenticationHelper _authService;
 
+        public RegisterForm()
+        {
             InitializeComponent();
-            private InitializeComponent();
+            _authService = new AuthenticationHelper();
         }
 
-        private void btnSubmit_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            // Get the user input
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string confirmPassword = txtConfirmPassword.Text;
-            string secretQuestion = cmbSecretQuestion.SelectedItem?.ToString();
+            string secretQuestion = txtSecretQuestion.Text;
             string secretAnswer = txtSecretAnswer.Text;
-
-            // Validate inputs
-            if (string.IsNullOrWhiteSpace(username))
-            {
-                MessageBox.Show("Please enter your Username.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Please enter your Password.");
-                return;
-            }
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Passwords and Username does not match.");
+                MessageBox.Show("Passwords do not match.");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(secretQuestion))
+            if (_authService.RegisterUser(username, password, secretQuestion, secretAnswer))
             {
-                MessageBox.Show("Please select a secret question.");
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(secretAnswer))
-            {
-                MessageBox.Show("Secret answer is required.");
-                return;
-            }
-
-            // Here, you could save the user data to a file or a database//
-            string userData = $"{username},{password},{secretQuestion},{secretAnswer}";
-
-            try
-            {
-                // Save the registration details to a file (you could use a database here)
-                File.AppendAllText("users.txt", userData + Environment.NewLine);
                 MessageBox.Show("Registration successful!");
-
-                // Clear the registration form
-                ClearForm();
+                this.Close();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error saving user data: " + ex.Message);
+                MessageBox.Show("Registration failed. Username might already exist or requirements not met.");
             }
+
         }
 
-        private void ClearForm()
-        {
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtConfirmPassword.Clear();
-            cmbSecretQuestion.SelectedIndex = -1;
-            txtSecretAnswer.Clear();
-        }
 
-        private void RegistrationForm_Load(object sender, EventArgs e)
-        {
-            // Add some secret questions to the ComboBox (it is possible to add more questions if required)
-            cmbSecretQuestion.Items.Add("What is your favorite color?");
-            cmbSecretQuestion.Items.Add("What is your favortie animal?");
-            cmbSecretQuestion.Items.Add("What was the name of your first pet?");
-            cmbSecretQuestion.Items.Add("What is your favorite food?");
-        }
     }
-};
+}

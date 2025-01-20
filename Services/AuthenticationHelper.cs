@@ -30,7 +30,7 @@ namespace ChatApp_SkoleProsjekt.Services
             File.WriteAllText(UserFilePath, json);
         }
 
-        public bool RegisterUsers(string username, string password, string secretQuestion, string secretAnswer)
+        public bool RegisterUser(string username, string password, string secretQuestion, string secretAnswer)
         {
             if (!IsValidUsername(username) || !IsValidPassword(password)) return false;
 
