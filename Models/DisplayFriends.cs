@@ -21,6 +21,10 @@ namespace ChatApp_SkoleProsjekt.Models
                             Console.WriteLine(f);
                         }
                     }
+                    else 
+                    {
+                        Console.WriteLine("You don't have any friends yet. Try add adding someone.");
+                    }
 
                     // Get List<Users>
                     // Output friendList
