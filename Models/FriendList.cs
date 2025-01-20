@@ -32,13 +32,5 @@ namespace ChatApp_SkoleProsjekt.Models
                 }
             }
         }
-
-        public void DisplayFriends()
-        {
-            // display.friendList;
-
-            // Get List<Users>
-            // Output friendList
-        }
     }
 }
