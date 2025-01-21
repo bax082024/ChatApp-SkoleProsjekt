@@ -47,11 +47,7 @@ namespace ChatApp_SkoleProsjekt
             Application.Exit();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var recoveryForm = new PasswordRecoveryForm();
-            recoveryForm.Show();
-        }
+
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -92,6 +88,12 @@ namespace ChatApp_SkoleProsjekt
             {
                 MessageBox.Show($"Error playing sound: {ex.Message}");
             }
+        }
+
+        private void linkRecovery_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoveryForm = new PasswordRecoveryForm();
+            recoveryForm.Show();
         }
     }
 }
