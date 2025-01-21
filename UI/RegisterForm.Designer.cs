@@ -28,31 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            RegisterButton = new Button();
+            Register = new Button();
+            checkBox1 = new CheckBox();
+            CancelButton = new Button();
             SuspendLayout();
             // 
-            // RegisterButton
+            // Register
             // 
-            RegisterButton.Location = new Point(413, 119);
-            RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(94, 29);
-            RegisterButton.TabIndex = 0;
-            RegisterButton.Text = "button1";
-            RegisterButton.UseVisualStyleBackColor = true;
+            Register.Location = new Point(533, 34);
+            Register.Name = "Register";
+            Register.Size = new Size(94, 29);
+            Register.TabIndex = 0;
+            Register.Text = "Register";
+            Register.UseVisualStyleBackColor = true;
+            Register.Click += this.RegisterButton_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(533, 137);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(96, 24);
+            checkBox1.TabIndex = 1;
+            checkBox1.Text = "Complete";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // CancelButton
+            // 
+            CancelButton.Location = new Point(533, 87);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new Size(94, 29);
+            CancelButton.TabIndex = 2;
+            CancelButton.Text = "Cancel";
+            CancelButton.UseVisualStyleBackColor = true;
             // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(RegisterButton);
+            Controls.Add(CancelButton);
+            Controls.Add(checkBox1);
+            Controls.Add(Register);
             Name = "RegisterForm";
             Text = "RegisterForm";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button RegisterButton;
+        private Button Register;
+        private CheckBox checkBox1;
+        private Button CancelButton;
     }
 }

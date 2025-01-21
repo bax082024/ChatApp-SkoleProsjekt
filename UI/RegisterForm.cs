@@ -1,6 +1,9 @@
 ﻿namespace ChatApp_SkoleProsjekt.UI
 {
-    public partial class RegisterForm : Form;
+    public partial class RegisterForm : Form private void RegisterButton_Click(object sender, EventArgs e)
+    {
+
+    };
     
     using System;
     using System.Windows.Form;
