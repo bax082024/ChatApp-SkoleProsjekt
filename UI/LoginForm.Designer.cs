@@ -202,7 +202,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "User Login";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
