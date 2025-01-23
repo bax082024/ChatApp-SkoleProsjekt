@@ -1,63 +1,99 @@
+using ChatApp_SkoleProsjekt.Services;
+using ChatApp_SkoleProsjekt.UI;
+using System.Drawing.Drawing2D;
+
+using NAudio.Wave; // lyd
+
 namespace ChatApp_SkoleProsjekt
 {
-    public partial class LoginForm : Form;
-    namespace LoginApp
+    public partial class LoginForm : Form
     {
-        public partial class Form1 : Form
+        // Lyd
+        private WaveOutEvent waveOut;
+        private AudioFileReader audioFileReader;
+
+        private readonly AuthenticationHelper _authService;
+
+        public LoginForm()
         {
-            private string connectionString = "your_connection_string_here";
+            InitializeComponent();
+            _authService = new AuthenticationHelper();
+        }
 
-            public Form1()
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (_authService.AuthenticateUser(username, password))
             {
-                InitializeComponent();
-
-
+                var currentUser = _authService.GetUserByUsername(username);
+                if (currentUser != null)
+                {
+                    var chatForm = new ChatForm();
+                    this.Hide();
+                    chatForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("User not found.");
+                }
             }
-            /// <summary>
-            ///
-            /// </summary>
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
 
-            class Program
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            var registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.Purple,  // Top color
+                Color.DarkBlue,        // Bottom color
+                LinearGradientMode.Vertical))
             {
-                // Hashed and salted username and password should consist of numbers and letters
-                static string storedUsername = "user123";
-                static string storedPassword = "password123";
-
-                static void Main(string[] args)
-                {
-                    // Ask user for login information
-                    Console.Write("Enter username: ");
-                    string username = Console.ReadLine();
-                    Console.Write("Enter password: ");
-                    string password = Console.ReadLine();
-                    // Call the login function
-
-                    if (CheckLoginDetails(username, password))
-                    {
-                        Console.WriteLine("Login was successful!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Login failed! Incorrect username and or password.");
-                    }
-                }
-
-                // Function to check login details
-                static bool CheckLoginDetails(string username, string password)
-                {
-                    // Check if the entered hashed username and password match the stored ones
-
-                    if (username == storedUsername && password == storedPassword)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string soundFilePath = @"Sounds\Bax.m4a"; // Relative path to the sound file
+
+                // Dispose any previous playback instance
+                waveOut?.Stop();
+                waveOut?.Dispose();
+                audioFileReader?.Dispose();
+
+                // Initialize audio file reader and output
+                audioFileReader = new AudioFileReader(soundFilePath);
+                waveOut = new WaveOutEvent();
+                waveOut.Init(audioFileReader);
+                waveOut.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error playing sound: {ex.Message}");
+            }
+        }
+
+        private void linkRecovery_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var recoveryForm = new PasswordRecoveryForm();
+            recoveryForm.Show();
+        }
     }
+}

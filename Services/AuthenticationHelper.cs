@@ -30,7 +30,7 @@ namespace ChatApp_SkoleProsjekt.Services
             File.WriteAllText(UserFilePath, json);
         }
 
-        public bool RegisterUsers(string username, string password, string secretQuestion, string secretAnswer)
+        public bool RegisterUser(string username, string password, string secretQuestion, string secretAnswer)
         {
             if (!IsValidUsername(username) || !IsValidPassword(password)) return false;
 
@@ -105,6 +105,12 @@ namespace ChatApp_SkoleProsjekt.Services
             return password.Length >= 8 &&
                 Regex.IsMatch(password, @"\d") &&
                 Regex.IsMatch(password, @"[!@#$%^&*(),.?""{}|<>]");
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            var users = LoadUsers();
+            return users.FirstOrDefault(u => u.Username == username);
         }
     }
 }
