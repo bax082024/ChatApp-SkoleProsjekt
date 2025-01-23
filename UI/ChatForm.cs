@@ -27,7 +27,7 @@ namespace ChatApp_SkoleProsjekt.UI
         {
             InitializeComponent();
 
-            _currentUser = currentUser;
+            //_currentUser = currentUser;
             _authenticationHelper = new AuthenticationHelper();
             this.Load += ChatForm_Load;
             //this.FormClosing += ChatForm_FormClosing;
