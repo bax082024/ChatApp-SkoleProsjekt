@@ -172,6 +172,7 @@
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // statusStrip1
             // 
