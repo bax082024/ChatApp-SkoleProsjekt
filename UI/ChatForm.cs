@@ -38,7 +38,7 @@ namespace ChatApp_SkoleProsjekt.UI
             _currentUser = currentUser;
             _authenticationHelper = new AuthenticationHelper();
             this.Load += ChatForm_Load;
-           // this.FormClosing += ChatForm_OnFormClosing;
+            // this.FormClosing += ChatForm_OnFormClosing;
             //DisplayUserDetails();
         }
 
@@ -55,13 +55,15 @@ namespace ChatApp_SkoleProsjekt.UI
             }
         }
 
-        private void LoadChatHistory(Guid friendId)
+        private void LoadChatHistory(Guid friendID)
         {
             messageRichTextBox.Clear();
 
-            if (chatHistory.ContainsKey(friendId.ToString()))
+            chatHistory = chatHistory ?? new Dictionary<string, List<ChatMessage>>();
+
+            if (chatHistory.ContainsKey(friendID.ToString()))
             {
-                foreach (var message in chatHistory[friendId.ToString()])
+                foreach (var message in chatHistory[friendID.ToString()])
                 {
                     messageRichTextBox.AppendText($"{message.TimeStamp:HH:mm} {message.Sender}: {message.Message}");
                 }
@@ -78,9 +80,9 @@ namespace ChatApp_SkoleProsjekt.UI
                 {
                     chatHistory = new Dictionary<string, List<ChatMessage>>();
                 }
-                if (chatHistory.ContainsKey(friendId.ToString()))
+                if (chatHistory.ContainsKey(friendID.ToString()))
                 {
-                    foreach (var message in chatHistory[friendId.ToString()])
+                    foreach (var message in chatHistory[friendID.ToString()])
                     {
                         messageRichTextBox.AppendText($"{selectedFriend.Username}: {message.Message}");
                     }
@@ -218,6 +220,30 @@ namespace ChatApp_SkoleProsjekt.UI
             }
 
             SaveChatHistory();
+        }
+
+        private void AddFriendButton_Click(object sender, EventArgs e)
+        {
+            string friendName = PromptDialog.ShowDialog("Add Friend", "Enter your friend's name:");
+            if (string.IsNullOrWhiteSpace(friendName))
+            {
+                MessageBox.Show("Please enter a valid friend name.");
+                return;
+            }
+
+            // Generate a unique ID for the friend
+            string friendID = Guid.NewGuid().ToString();
+
+            // Add the friend to the FriendListBox
+            var newFriend = new Friend
+            {
+                Username = friendName,
+                ID = Guid.Parse(friendID)
+            };
+
+            FriendListBox.Items.Add(newFriend);
+
+            MessageBox.Show($"{friendName} has been added to your friend list!");
         }
     }
 }

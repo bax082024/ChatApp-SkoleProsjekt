@@ -34,6 +34,7 @@
             FriendListBox = new ListBox();
             ClearHistorybutton = new Button();
             messageRichTextBox = new RichTextBox();
+            AddFriendButton = new Button();
             SuspendLayout();
             // 
             // sendButton
@@ -99,12 +100,23 @@
             messageRichTextBox.TabIndex = 6;
             messageRichTextBox.Text = "";
             // 
+            // AddFriendButton
+            // 
+            AddFriendButton.Location = new Point(43, 495);
+            AddFriendButton.Name = "AddFriendButton";
+            AddFriendButton.Size = new Size(112, 34);
+            AddFriendButton.TabIndex = 7;
+            AddFriendButton.Text = "AddFriend ";
+            AddFriendButton.UseVisualStyleBackColor = true;
+            AddFriendButton.Click += AddFriendButton_Click;
+            // 
             // ChatForm
             // 
             AcceptButton = SendButton1;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 544);
+            Controls.Add(AddFriendButton);
             Controls.Add(messageRichTextBox);
             Controls.Add(ClearHistorybutton);
             Controls.Add(FriendListBox);
@@ -127,5 +139,6 @@
         private ListBox FriendListBox;
         private Button ClearHistorybutton;
         private RichTextBox messageRichTextBox;
+        private Button AddFriendButton;
     }
 }
