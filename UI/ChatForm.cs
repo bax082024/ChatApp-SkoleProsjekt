@@ -26,6 +26,7 @@ namespace ChatApp_SkoleProsjekt.UI
         private Friend selectedFriend;
         private const string FriendFilePath = "FriendList.json";
         private readonly User _currentUser;
+        private const string ChatHistoryFilePath = "chatHistory.json";
 
         private Dictionary<string, List<ChatMessage>> chatHistory;
         private readonly AuthenticationHelper _authenticationHelper;
@@ -33,21 +34,35 @@ namespace ChatApp_SkoleProsjekt.UI
         public ChatForm(User currentUser)
         {
             InitializeComponent();
+            chatHistory = new Dictionary<string, List<ChatMessage>>();
+            LoadFriends();
             LoadChatHistory(currentUser.ID);
+
+            // Add friends to the FriendListBox
+            foreach (var friend in friendList)
+            {
+                FriendListBox.Items.Add(friend);
+            }
 
             _currentUser = currentUser;
             _authenticationHelper = new AuthenticationHelper();
             this.Load += ChatForm_Load;
-            // this.FormClosing += ChatForm_OnFormClosing;
+            this.FormClosing += ChatForm_FormClosing;
             //DisplayUserDetails();
+            this.FriendListBox.SelectedIndexChanged += FriendListBox_SelectedIndexChanged;
         }
 
-        private void SaveChatHistory()
+        private void SaveChatHistory(Guid friendID)
         {
             try
             {
-                string json = JsonConvert.SerializeObject(chatHistory, Newtonsoft.Json.Formatting.Indented);
-                System.IO.File.WriteAllText("chatHistory.json", json);
+                string fileName = $"{friendID}_chat.json";
+
+                if (chatHistory.ContainsKey(friendID.ToString()))
+                {
+                    string json = Newtonsoft.Json.JsonConvert.SerializeObject(chatHistory[friendID.ToString()], Newtonsoft.Json.Formatting.Indented);
+                    File.WriteAllText(fileName, json);
+                }
             }
             catch (Exception ex)
             {
@@ -59,41 +74,36 @@ namespace ChatApp_SkoleProsjekt.UI
         {
             messageRichTextBox.Clear();
 
-            chatHistory = chatHistory ?? new Dictionary<string, List<ChatMessage>>();
-
-            if (chatHistory.ContainsKey(friendID.ToString()))
-            {
-                foreach (var message in chatHistory[friendID.ToString()])
-                {
-                    messageRichTextBox.AppendText($"{message.TimeStamp:HH:mm} {message.Sender}: {message.Message}");
-                }
-            }
             try
             {
-                if (System.IO.File.Exists("chatHistory.json"))
+                string fileName = $"{friendID}_chat.json";
+
+                if (System.IO.File.Exists(fileName))
                 {
-                    string json = File.ReadAllText("chatHistory.json");
-                    chatHistory = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, List<ChatMessage>>>(json)
-                                  ?? new Dictionary<string, List<ChatMessage>>();
+                    string json = System.IO.File.ReadAllText(fileName);
+                    var messages = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ChatMessage>>(json);
+
+                    if (messages != null)
+                    {
+                        chatHistory[friendID.ToString()] = messages;
+
+                        foreach (var message in messages)
+                        {
+                            AppendMessage(message);
+                        }
+                    }
                 }
                 else
                 {
-                    chatHistory = new Dictionary<string, List<ChatMessage>>();
-                }
-                if (chatHistory.ContainsKey(friendID.ToString()))
-                {
-                    foreach (var message in chatHistory[friendID.ToString()])
-                    {
-                        messageRichTextBox.AppendText($"{selectedFriend.Username}: {message.Message}");
-                    }
+                    chatHistory[friendID.ToString()] = new List<ChatMessage>();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while loading chat history: {ex.Message}");
-                chatHistory = new Dictionary<string, List<ChatMessage>>();
+                MessageBox.Show($"Error loading chat history: {ex.Message}");
             }
         }
+
 
         private void AppendMessage(ChatMessage message)
         {
@@ -120,9 +130,42 @@ namespace ChatApp_SkoleProsjekt.UI
             messageRichTextBox.ScrollToCaret();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void SendMessage()
         {
-            SaveChatHistory();
+            if (selectedFriend == null || string.IsNullOrWhiteSpace(messageTextBox.Text));
+                return;
+            
+
+            ChatMessage newMessage = new ChatMessage
+            {
+                Sender = _currentUser.Username,
+                Message = messageTextBox.Text.Trim(),
+                TimeStamp = DateTime.Now
+            };
+
+            if (!chatHistory.ContainsKey(selectedFriend.ID.ToString()))
+            {
+                chatHistory[selectedFriend.ID.ToString()] = new List<ChatMessage> { newMessage };
+            }
+
+            // Add new message to the chat history
+            chatHistory[selectedFriend.ID.ToString()].Add(newMessage);
+
+            // Append the message to the RichTextBox
+            AppendMessage(newMessage);
+
+            // Save the chat history
+            SaveChatHistory(selectedFriend.ID);
+
+            // Clear the message text box
+            messageTextBox.Clear();
+        }
+        private void ChatForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveChatHistory(selectedFriend.ID);
+
+            // Save the friends list before closing the form
+            SaveFriends();
             base.OnFormClosing(e);
         }
         private void ChatForm_Load(object sender, EventArgs e)
@@ -163,7 +206,8 @@ namespace ChatApp_SkoleProsjekt.UI
 
                 // Append the message to the RichTextBox
                 AppendMessage(chatMessage);
-                SaveChatHistory();
+                SendMessage();
+                SaveChatHistory(selectedFriend.ID);
                 messageTextBox.Clear();
             }
 
@@ -171,29 +215,15 @@ namespace ChatApp_SkoleProsjekt.UI
 
         private void FriendListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (File.Exists(FriendFilePath))
+            if (FriendListBox.SelectedItem is Friend selectedFriendItem)
             {
-                string jsonContent = File.ReadAllText(FriendFilePath);
-                var friends = JsonConvert.DeserializeObject<List<Friend>>(jsonContent);
-                if (friends != null)
-                {
-                    friendList = friends;
-                    foreach (Friend f in friendList)
-                    {
-                        Console.WriteLine(f);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("You don't have any friends yet. Try adding someone :)");
-                }
-            }
+                selectedFriend = selectedFriendItem;
 
-            selectedFriend = FriendListBox.SelectedItem as Friend;
-
-            if (selectedFriend != null)
-            {
-                // LoadChatHistory(selectedFriend.Id);
+                if (selectedFriend != null)
+                {
+                    LoadChatHistory(selectedFriend.ID);
+                    chatHeaderLabel.Text = $"Chatting with {selectedFriend.Username}";
+                }
             }
         }
 
@@ -219,7 +249,7 @@ namespace ChatApp_SkoleProsjekt.UI
                 MessageBox.Show($"Chat history with {selectedFriend.Username} has been cleared.");
             }
 
-            SaveChatHistory();
+            SaveChatHistory(selectedFriend.ID);
         }
 
         private void AddFriendButton_Click(object sender, EventArgs e)
@@ -245,5 +275,42 @@ namespace ChatApp_SkoleProsjekt.UI
 
             MessageBox.Show($"{friendName} has been added to your friend list!");
         }
+
+        private void SaveFriends()
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(friendList, Newtonsoft.Json.Formatting.Indented);
+                System.IO.File.WriteAllText(FriendFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while saving friends: {ex.Message}");
+            }
+        }
+
+        private void LoadFriends()
+        {
+            try
+            {
+                if (System.IO.File.Exists(FriendFilePath))
+                {
+                    string json = File.ReadAllText(FriendFilePath);
+                    friendList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Friend>>(json)
+                                  ?? new List<Friend>();
+                }
+                else
+                {
+                    friendList = new List<Friend>();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading friends: {ex.Message}");
+                friendList = new List<Friend>();
+            }
+        }
+
+        
     }
 }

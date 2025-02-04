@@ -21,7 +21,7 @@
         }
 
         #region Windows Form Designer generated code
-
+        private Label chatHeaderLabel;
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -35,6 +35,7 @@
             ClearHistorybutton = new Button();
             messageRichTextBox = new RichTextBox();
             AddFriendButton = new Button();
+            chatHeaderLabel = new Label();
             SuspendLayout();
             // 
             // sendButton
@@ -51,7 +52,7 @@
             // messageTextBox
             // 
             messageTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            messageTextBox.Location = new Point(200, 480);
+            messageTextBox.Location = new Point(203, 458);
             messageTextBox.Margin = new Padding(4, 5, 4, 5);
             messageTextBox.Name = "messageTextBox";
             messageTextBox.Size = new Size(480, 31);
@@ -59,9 +60,9 @@
             // 
             // SendButton1
             // 
-            SendButton1.Location = new Point(690, 480);
+            SendButton1.Location = new Point(690, 459);
             SendButton1.Name = "SendButton1";
-            SendButton1.Size = new Size(90, 30);
+            SendButton1.Size = new Size(76, 30);
             SendButton1.TabIndex = 3;
             SendButton1.Text = "Send";
             SendButton1.UseVisualStyleBackColor = true;
@@ -81,7 +82,7 @@
             // ClearHistorybutton
             // 
             ClearHistorybutton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            ClearHistorybutton.Location = new Point(220, 510);
+            ClearHistorybutton.Location = new Point(203, 499);
             ClearHistorybutton.Name = "ClearHistorybutton";
             ClearHistorybutton.Size = new Size(120, 30);
             ClearHistorybutton.TabIndex = 5;
@@ -92,11 +93,11 @@
             // messageRichTextBox
             // 
             messageRichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            messageRichTextBox.Location = new Point(220, 10);
+            messageRichTextBox.Location = new Point(203, 45);
             messageRichTextBox.Name = "messageRichTextBox";
             messageRichTextBox.ReadOnly = true;
             messageRichTextBox.ScrollBars = RichTextBoxScrollBars.Vertical;
-            messageRichTextBox.Size = new Size(400, 480);
+            messageRichTextBox.Size = new Size(563, 405);
             messageRichTextBox.TabIndex = 6;
             messageRichTextBox.Text = "";
             // 
@@ -110,12 +111,20 @@
             AddFriendButton.UseVisualStyleBackColor = true;
             AddFriendButton.Click += AddFriendButton_Click;
             // 
+            // chatHeaderLabel
+            // 
+            chatHeaderLabel.Location = new Point(203, 10);
+            chatHeaderLabel.Name = "chatHeaderLabel";
+            chatHeaderLabel.Size = new Size(563, 32);
+            chatHeaderLabel.TabIndex = 0;
+            // 
             // ChatForm
             // 
             AcceptButton = SendButton1;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(778, 544);
+            Controls.Add(chatHeaderLabel);
             Controls.Add(AddFriendButton);
             Controls.Add(messageRichTextBox);
             Controls.Add(ClearHistorybutton);
