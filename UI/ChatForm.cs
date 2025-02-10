@@ -56,12 +56,15 @@ namespace ChatApp_SkoleProsjekt.UI
         {
             try
             {
-                string fileName = $"{friendID}_chat.json";
-
                 if (chatHistory.ContainsKey(friendID.ToString()))
                 {
                     string json = Newtonsoft.Json.JsonConvert.SerializeObject(chatHistory[friendID.ToString()], Newtonsoft.Json.Formatting.Indented);
-                    File.WriteAllText(fileName, json);
+                    string fileName = $"{friendID}_chat.json";
+                    System.IO.File.WriteAllText(fileName, json);
+
+
+                    // Debugging: Show a confirmation message
+                    Console.WriteLine($"Chat history with {selectedFriend.Username} has been saved.");
                 }
             }
             catch (Exception ex)
@@ -86,6 +89,8 @@ namespace ChatApp_SkoleProsjekt.UI
                     if (messages != null)
                     {
                         chatHistory[friendID.ToString()] = messages;
+
+                        Console.WriteLine($"Loaded chat history for {friendID}: {json}");
 
                         foreach (var message in messages)
                         {
@@ -132,9 +137,17 @@ namespace ChatApp_SkoleProsjekt.UI
 
         private void SendMessage()
         {
-            if (selectedFriend == null || string.IsNullOrWhiteSpace(messageTextBox.Text));
+            if (selectedFriend == null)
+            {
+                MessageBox.Show("Please select a friend to chat with.");
                 return;
-            
+            }
+
+            if (string.IsNullOrWhiteSpace(messageTextBox.Text))
+            {
+                MessageBox.Show("Cannot send an empty message.", "Empty message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             ChatMessage newMessage = new ChatMessage
             {
@@ -145,7 +158,7 @@ namespace ChatApp_SkoleProsjekt.UI
 
             if (!chatHistory.ContainsKey(selectedFriend.ID.ToString()))
             {
-                chatHistory[selectedFriend.ID.ToString()] = new List<ChatMessage> { newMessage };
+                chatHistory[selectedFriend.ID.ToString()] = new List<ChatMessage>();
             }
 
             // Add new message to the chat history
@@ -281,6 +294,8 @@ namespace ChatApp_SkoleProsjekt.UI
             try
             {
                 string json = JsonConvert.SerializeObject(friendList, Newtonsoft.Json.Formatting.Indented);
+                // Writing the JSON to output for debugging
+                Console.WriteLine(json);
                 System.IO.File.WriteAllText(FriendFilePath, json);
             }
             catch (Exception ex)
