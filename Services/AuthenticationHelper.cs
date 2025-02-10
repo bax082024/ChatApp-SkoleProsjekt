@@ -14,7 +14,7 @@ namespace ChatApp_SkoleProsjekt.Services
 {
     public class AuthenticationHelper
     {
-        private const string UserFilePath = "users.jason";
+        private const string UserFilePath = "users.json";
 
         public List<User> LoadUsers()
         {
