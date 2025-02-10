@@ -30,8 +30,7 @@ namespace ChatApp_SkoleProsjekt
                 var currentUser = _authService.GetUserByUsername(username);
                 if (currentUser != null)
                 {
-                    var chatForm = new ChatForm();
-                    this.Hide();
+                    var chatForm = new ChatForm(currentUser);  
                     chatForm.Show();
                 }
                 else
