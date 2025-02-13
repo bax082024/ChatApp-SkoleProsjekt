@@ -9,9 +9,10 @@ application.
 
 - Registration
 - Login
-- Password Recovery
-- Chat 
-- Password Security : SHA256 + Salt is used to encrypt password.
+- Chat
+- Password Recovery function.
+- Password Security : Uses SHA-256 with a unique salt for each user.
+- Validation : Compares the hashed password against the stored hash.
 
 --- 
 
