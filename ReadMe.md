@@ -2,11 +2,6 @@
 
 This is a group project collaborating to create a working chat 
 application.
-- Registration page
-- Login page
-- Forgot password page
-- Friend list page
-- Chat page
 
 --- 
 
@@ -18,6 +13,18 @@ application.
 - Chat 
 
 --- 
+
+## How to use 
+
+1. Clone repository : https://github.com/bax082024/ChatApp-SkoleProsjekt.git
+2. cd ChatApp-SkoleProsjekt
+3. Rebuild solution.
+4. Run the program.
+5. follow instructions.
+
+---
+
+
 
 
 
