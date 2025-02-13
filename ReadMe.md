@@ -1,7 +1,7 @@
 ﻿# Chat App
 
 This is a group project collaborating to create a working chat 
-application including:
+application.
 - Registration page
 - Login page
 - Forgot password page
@@ -9,6 +9,20 @@ application including:
 - Chat page
 
 --- 
+
+## Features 
+
+- Registration
+- Login
+- Password Recovery
+- Chat 
+
+--- 
+
+
+
+
+
 
 The project GUI has been created using Windows Forms, and user 
 information has been stored using Json files. We have used Salt
