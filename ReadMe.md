@@ -7,10 +7,11 @@ application.
 
 ## Features 
 
-- Registration : SHA256 + Salt is used to encrypt password.
+- Registration
 - Login
 - Password Recovery
 - Chat 
+- Password Security : SHA256 + Salt is used to encrypt password.
 
 --- 
 
@@ -24,9 +25,11 @@ application.
 
 ---
 
-## MasterPlan
+## MasterPlan :eyes:
 
 [Kontrakt](Masterplan/Kontrakt.txt)
+
+---
 
 
 
