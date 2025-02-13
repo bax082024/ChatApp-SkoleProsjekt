@@ -1,12 +1,42 @@
-﻿### Chat APP - Group Project
+﻿# Chat App
 
 This is a group project collaborating to create a working chat 
-application including:
-- Registration page
-- Login page
-- Forgot password page
-- Friend list page
-- Chat page
+application.
+
+--- 
+
+## Features 
+
+- Registration
+- Login
+- Chat
+- Password Recovery function.
+- Password Security : Uses SHA-256 with a unique salt for each user.
+- Validation : Compares the hashed password against the stored hash.
+
+--- 
+
+## How to use 
+
+1. Clone repository : https://github.com/bax082024/ChatApp-SkoleProsjekt.git
+2. cd ChatApp-SkoleProsjekt
+3. Rebuild solution.
+4. Run the program.
+5. follow instructions.
+
+---
+
+## MasterPlan :eyes:
+
+[Kontrakt](Masterplan/Kontrakt.txt)
+
+---
+
+
+
+
+
+
 
 The project GUI has been created using Windows Forms, and user 
 information has been stored using Json files. We have used Salt
