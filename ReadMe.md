@@ -24,6 +24,9 @@ application.
 
 ---
 
+## MasterPlan
+
+[Kontrakt](Masterplan/Kontrakt.txt)
 
 
 
