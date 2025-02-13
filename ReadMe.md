@@ -1,4 +1,4 @@
-﻿### Chat APP - Group Project
+﻿# Chat App
 
 This is a group project collaborating to create a working chat 
 application including:
@@ -7,6 +7,8 @@ application including:
 - Forgot password page
 - Friend list page
 - Chat page
+
+--- 
 
 The project GUI has been created using Windows Forms, and user 
 information has been stored using Json files. We have used Salt
