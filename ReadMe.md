@@ -7,7 +7,7 @@ application.
 
 ## Features 
 
-- Registration
+- Registration : SHA256 + Salt is used to encrypt password.
 - Login
 - Password Recovery
 - Chat 
