@@ -70,14 +70,12 @@ namespace ChatApp_SkoleProsjekt
         {
             try
             {
-                string soundFilePath = @"Sounds\Bax.m4a"; // Relative path to the sound file
+                string soundFilePath = @"Sounds\Bax.m4a";
 
-                // Dispose any previous playback instance
                 waveOut?.Stop();
                 waveOut?.Dispose();
                 audioFileReader?.Dispose();
 
-                // Initialize audio file reader and output
                 audioFileReader = new AudioFileReader(soundFilePath);
                 waveOut = new WaveOutEvent();
                 waveOut.Init(audioFileReader);
