@@ -88,5 +88,10 @@ namespace ChatApp_SkoleProsjekt.UI
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
