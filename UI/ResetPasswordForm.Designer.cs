@@ -105,7 +105,7 @@
             txtNewPassword.BackColor = SystemColors.Info;
             txtNewPassword.Location = new Point(72, 52);
             txtNewPassword.Name = "txtNewPassword";
-            txtNewPassword.PlaceholderText = "Username";
+            txtNewPassword.PlaceholderText = "New Password";
             txtNewPassword.Size = new Size(127, 23);
             txtNewPassword.TabIndex = 11;
             // 
@@ -115,7 +115,7 @@
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(panel1);
             panel2.Location = new Point(56, 43);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(295, 234);
             panel2.TabIndex = 3;
