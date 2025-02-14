@@ -74,7 +74,19 @@ namespace ChatApp_SkoleProsjekt.UI
 
         private void btnRecover_Click(object sender, EventArgs e)
         {
+            string secretAnswer = txtSecretAnswer.Text;
 
+            if (_authService.ValidateSecretAnswer(_currentUsername, secretAnswer))
+            {
+                lblStatus.Text = "Secret answer is correct! Please reset your password.";
+                var resetForm = new ResetPasswordForm(_currentUsername);
+                resetForm.Show();
+                this.Close();
+            }
+            else
+            {
+                lblStatus.Text = "Invalid answer to the secret question.";
+            }
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
