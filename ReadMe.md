@@ -27,7 +27,7 @@ application.
 ---
 
 ## MasterPlan :eyes:
-- [MasterPlan](Masterplan/chatapp.png)
+- [Masterplan](Masterplan/masterplan.png)
 - [Kontrakt](Masterplan/Kontrakt.txt)
 
 ---
