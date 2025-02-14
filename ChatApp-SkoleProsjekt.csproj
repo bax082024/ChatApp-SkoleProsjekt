@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Images\Screenshot 2025-01-20 203648.png">
+    <None Update="Images\chatapp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
