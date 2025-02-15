@@ -1,11 +1,11 @@
-﻿# Chat App
+﻿# Chat App 🖥️
 
 This is a group project collaborating to create a working chat 
 application.
 
 --- 
 
-## Features 
+## Features 🛠️ 
 
 - Registration
 - Login
@@ -16,7 +16,7 @@ application.
 
 --- 
 
-## How to use 
+## How to use :eyes:
 
 1. Clone repository : https://github.com/bax082024/ChatApp-SkoleProsjekt.git
 2. cd ChatApp-SkoleProsjekt
@@ -26,7 +26,7 @@ application.
 
 ---
 
-## MasterPlan :eyes:
+## MasterPlan 🔍
 - [Masterplan](Masterplan/masterplan.png)
 - [Kontrakt](Masterplan/Kontrakt.txt)
 
